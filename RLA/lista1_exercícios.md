@@ -4,7 +4,7 @@
 
 ## Lista de exercícios 01
 
-### Exercício 3
+### Exercício 1
 Represente, em fluxograma e pseudocódigo, um algoritmo para deterinar se um número inteiro e positicvo é par ou ímpar.
 
 #### Fluxograma
@@ -50,3 +50,36 @@ FIM
 | 0 | True | 0 | True | "O número é par"
 | 10 | True | 0 | True | "O número é par"
 | 11 | True | 1 | False | "O número é ímpar" 
+
+### Exercício 2
+
+#### FLUXOGRAMA
+``` mermaid
+flowchart TB
+A([INÍCIO]) --> B{{Digite seu salário: }}
+B --> C[/sal/]
+C --> D{sal>500?}
+D --S--> E[nsal = 1,10*sal]
+D --N--> G[nsal = 1,20*sal]
+E-->I[/nsal/]
+G-->I
+I --> F{{O novo salário é nsal}}
+F-->H([FIM])
+```
+
+#### PSEUDOCÓDIGO
+ALGORITMO par_ímpar
+Declare sal, nsal: INTEIRO
+INICIO
+ESCREVA "Digite seu salário: "
+LEIA sal
+SE sal > 500 ENTAO	
+	nsal= 1,10*sal
+SENAO
+	nsal=1,20*sal
+FIM_SE
+LEIA nsal
+	ESCREVA " seu novo salário é" nsal. 
+FIM
+	
+#### TESTE
