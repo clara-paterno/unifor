@@ -68,6 +68,7 @@ F-->H([FIM])
 ```
 
 #### PSEUDOCÓDIGO
+```
 ALGORITMO par_ímpar
 Declare sal, nsal: INTEIRO
 INICIO
@@ -81,5 +82,6 @@ FIM_SE
 LEIA nsal
 	ESCREVA " seu novo salário é" nsal. 
 FIM
+```
 	
 #### TESTE
