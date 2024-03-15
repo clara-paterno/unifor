@@ -94,10 +94,12 @@ FIM_ALGORITMO
 #### Teste de mesa (1.0 ponto)
 | sal | salário>500 | nsal |  Saída |
 | -- | -- | -- | -- | -- | 
-| 400 | F | 1,20*400   | "O novo salário é 480" |
-| 600 | V | 1,1*600 | "O novo salário é 660" |
-| 1000 | V  | 1,1*1000 | "O novo salário é 1100" |
+| 400 | F | 1,20* 400   | "O novo salário é 480" |
+| 600 | V | 1,1* 600 | "O novo salário é 660" |
+| 1000 | V  | 1,1* 1000 | "O novo salário é 1100" |
 | 490| F  |1,2*490 | "O novo salário é 588" |
+
+
 
 ## Exercício 03 (3 pontos)
 Represente, em fluxograma e pseudocódigo, um algoritmo para calcular a média aritmética entre duas notas de um aluno e mostrar sua situação, que pode ser aprovado ou reprovado.
