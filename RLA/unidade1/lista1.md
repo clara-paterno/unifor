@@ -92,6 +92,7 @@ FIM_ALGORITMO
 ```
 
 #### Teste de mesa (1.0 ponto)
+```
 | sal | salário>500 | nsal |  Saída |
 | -- | -- | -- | -- | -- | 
 | 400 | F | 1,20*400   | "O novo salário é 480" |
@@ -108,15 +109,35 @@ Represente, em fluxograma e pseudocódigo, um algoritmo para calcular a média a
 #### Fluxograma (1 ponto)
 
 ```mermaid
-flowchart TD
-A([INICIO]) --> B([FIM])
+flowchart TB
+A([INÍCIO]) --> B{{Digite as notas: }}
+B --> D[/n1, n2/] 
+D --> E[M=n1+n2/2]
+E-->F{M>=6}
+F--S-->G{{Aprovado}}
+F--N-->H{{Reprovado}}
+G-->I([FIM])
+H-->I
 ```
 
 #### Pseudocódigo (1 ponto)
 
+
 ```
-Algoritmo ContaAprovacoes
-FIM_ALGORITMO
+ALGORITMO_média
+DECLARE n1, n2, M: INTEIROS
+INICIO
+ESCREVA "Digite as notas: "
+LEIA n1, n2
+M=(n1+n2)/2
+SE M>=6
+	ESCREVA "Aprovado"
+SENAO
+	ESCREVA "Reprovado"
+FIM_SE
+FIM
+
+
 ```
 
 #### Teste de mesa (1 ponto)
