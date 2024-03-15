@@ -1,5 +1,5 @@
 # UNIFOR
-**Nome**: Maria Clara Paterno Maia
+**Nome**: Maria Clara Paterno Maia <br>
 **Disciplina**: Raciocínio lógico e algoritmo
 
 ## Lista de exercícios 01
