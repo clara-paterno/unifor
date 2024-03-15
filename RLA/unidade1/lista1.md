@@ -142,10 +142,12 @@ FIM
 
 #### Teste de mesa (1 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| n1 | n2 | média | M>=6   |    Saída    |
+| -- | -- |  --   |   --   |      --     | 
+| 7  | 10 | 8,5   | V      | "Aprovado"  |
+| 8  |  6 | 7     | V      | "Aprovado"  |
+|  5 |  4 | 4,5   | F      | "Reprovado" |
+|7   | 9  | 8     |V       | "Aprovado"  |
 
 ## Exercício 04 (3 pontos)
 Represente, em fluxograma e pseudocódigo, um algoritmo que, a partir da idade do candidato(a), determinar se pode ou não tirar a CNH. 
