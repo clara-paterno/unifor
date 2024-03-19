@@ -152,24 +152,38 @@ FIM
 ## Exercício 04 (3 pontos)
 Represente, em fluxograma e pseudocódigo, um algoritmo que, a partir da idade do candidato(a), determinar se pode ou não tirar a CNH. 
 Caso não atender a restrição de idade, calcular quantos anos faltam para o candidato estar apto.
-
-#### Fluxograma (1.0 ponto)
-
+#### Fluxograma
 ```mermaid
-flowchart TD
-A([INICIO]) --> B([FIM])
+flowchart TB
+A([INÍCIO]) --> B{{Digite a sua idade: }}
+B --> C[/I/] 
+C --> D{I>=18}
+D--S--> E{{Pode tirar a CNH}}
+D --N--> F[I2=18-I]
+F --> G{{Pode tirar a CNH daqui a I anos}}
+E--> I([FIM])
+G --> I
 ```
-
-#### Pseudocódigo (1.0 ponto)
+#### Pseudocódigo
 
 ```
-Algoritmo ContaAprovacoes
-FIM_ALGORITMO
+ALGORTIMO verifica_idade
+DECLARE I, I2: INTEIRO
+ESCREVA "Digite a sua idade: "
+INICIO
+LEIA I
+SE I>= 18 ENTAO                  
+	ESCREVA "Pode tirar a CNH"              
+SENAO
+I2=18-I
+	ESCREVA "Pode tirar a CNH daqui I2 anos"
+FIM_SE
+FIM
 ```
-
-#### Teste de mesa (1.0 ponto)
-
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+#### Teste
+| Idade | Idade >= 18 | I2  |                Saída               |
+| --    | --          | --  | --                                 |  
+| 18    | V           |     |  "Pode tirar a CNH"                |
+| 16    | F           |   2 |  "Pode tirar a CNH daqui a 2 anos" |
+| 13    | F           |  5  |  "Pode tirar a CNH daqui a 5 anos" |
+| 30    | V           |     |  "Pode tirar a CNH"                |
