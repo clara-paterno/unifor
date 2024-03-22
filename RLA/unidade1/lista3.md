@@ -199,12 +199,12 @@ Por exemplo, para a sequência {12, 17, 4, -6, 8, 0}, o seu programa deve escrev
 flowchart TB
 A([INICIO]) --> B{{Digite a quantidade de termos: }}
 B --> C[/n/]
-C --> D[/i = 1/]
-D --> E{{soma = 0}}
+C --> D[i = 1]
+D --> E[soma = 0]
 E --> F{i <= n}
 F --FALSE--> G{{A soma dos valores é, soma}}
 G --> L([FIM])
-F --TRUE--> H{{Digite o número, i:}}
+F --TRUE--> H{{Digite o número, i: }}
 H --> I[/num/]
 I --> J[soma = soma + num]
 J --> K[i = i + 1]
@@ -250,16 +250,16 @@ Ex. Foram lidas 14 notas. A média aritmética é 6.75!
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B[/soma = 0/]
-B --> C[/cont = 0/]
+A([INICIO]) --> B[soma = 0]
+B --> C[cont = 0]
 C --> D{{Digite uma nota: }}
-D --> Z[/nota/]
-Z --> E{nota > 0}
-E --TRUE--> F[soma = soma + nota]
+D --> E[/nota/]
+E --> F[soma = soma + nota]
 F --> G[cont = cont +1]
-G --LOOP--> D
-E --FALSE--> H[média = soma/cont ] 
-H --> I{{Foram lidas, cont, notas. A média é, média.}}
+G --> H{nota < 0}
+H --FALSE/LOOP--> H[média = soma/cont ] 
+H --TRUE--> I{{Foram lidas, cont, notas. A média é, média.}}
+I --> J([FIM])
 ```
 
 #### Pseudocódigo (1.0 ponto)
