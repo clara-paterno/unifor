@@ -91,22 +91,33 @@ Leia uma temperatura dada em Celsius (C) e imprima o equivalente em Fahrenheit (
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{Digite a temperatura em celsius}}
+B --> C[/Tc/]
+C --> D[Tf=1,8Tc+32]
+D --> F{{A temperatura em Farenheit é, Tf}}
+F --> G([FIM])
 ```
 
 #### Pseudocódigo (1.0 ponto)
 
 ```
 Algoritmo ConverteCelsiusFarenheit
-FIM_ALGORITMO
+DECLARE Tc, Tf: INTEIROS 
+INICIO
+ESCREVA "Digite a temperatura em celsius: "
+LEIA Tc 
+Tf <- 1,8Tc+32
+ESCREVA "A temperatura em Farenheit é, Tf"
+FIM
 ```
 
 #### Teste de mesa (0.5 ponto)
+| Tc  |  Tf  |               saída                     |  
+| --  |  --  |                --                       |      
+| 30  |  86  |    "A temperatura em Farenheit é 86"    |    
+| 45  |  113 |   "A temperatura em Farenheit é 113"    |   
+| 89  | 192,2 | "A temperatura em Farenheit é 192,2"   | 
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
 
 ### Exercício 03 (2.5 pontos)
 Receba dois números reais e um operador e efetue a operação correspondente com os valores recebidos (operandos). 
@@ -116,22 +127,51 @@ O algoritmo deve retornar o resultado da operação selecionada simulando todas 
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{Digite dois números reais: }}
+B --> C[/n1, n2/]
+C --> D{{Digite um operador +, -, x, /: }}
+D -- + --> E[r=n1+n2]
+D -- - --> F[r=n1-n2]
+D -- x --> G[r=n1*n2]
+D -- / --> H[r=n1/n2]
+E --> I{{O resultado da operação é r}}
+F --> I
+G --> I
+H --> I
+I --> J([FIM])
 ```
 
 #### Pseudocódigo (1.0 ponto)
 
 ```
 Algoritmo Calculadora
-FIM_ALGORITMO
+DECLARE n1, n2, r: reais 
+DECLARE operador: string
+INICIO
+ESCREVA "Digite dois números reais: "
+LEIA n1, n2
+ESCREVA "Digite um operador +, -, x, /: "
+SE operador == + ENTAO
+	r <- n1+n2
+SE operador == - ENTAO
+	r <- n1-n2
+SE operador == x ENTAO
+	r <- n1*n2
+SE operador == / ENTAO
+	r <- n1/n2
+FIM_SE
+ESCREVA "O resultado da operação é, r"
+FIM
 ```
 
 #### Teste de mesa (0.5 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| n1 | n2 | operador  | r  |Saída |
+| -- | -- | -- | -- |  -- |
+| 18 | 2 |  + | 20 | "O resultado da operação é 20" |
+| 16  | 2 | x |  32  |"O resultado da operação é 32"  |
+| 13 | 5 | - | 8  |  "O resultado da operação é 8"|
+| 30 | 6 | / | 5 |"O resultado da operação é 5"  |
 
 ### Exercício 04 (2.5 pontos)
 Elaborar um algoritmo que, dada a idade, classifique nas categorias: infantil A (5 - 7 anos), infantil B (8 -10 anos), juvenil A (11 - 13 anos), juvenil B (14 -17 anos) e adulto (maiores que 18 anos).
@@ -140,19 +180,52 @@ Elaborar um algoritmo que, dada a idade, classifique nas categorias: infantil A 
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{Digite sua idade: }}
+B --> C[/I/]
+C --> D{7>=I>=5}
+D --TRUE--> E{{Você está na categoria infantil A}}
+D --FALSE--> G{10>=I>=8}
+G --TRUE--> H{{Você está na categoria infantil B}}
+G --FALSE--> I{13>=I>=11}
+I --TRUE--> J{{Você está na categoria juvenil A}}
+I --FALSE--> K{17>=I>=14}
+K --TRUE--> L{{Você está na categoria juvenil B}}
+K --FALSE--> M{I>18}
+M --TRUE--> N{{Você está na categoria adulto}}
+N --> O([FIM])
+E --> O
+H --> O
+J --> O
+L --> O
 ```
 
 #### Pseudocódigo (1.0 ponto)
-
 ```
-Algoritmo ClassificaCategoria
-FIM_ALGORITMO
+Algoritmo CategoriaIdade
+DECLARE I: INTEIRO
+INICIO
+ESCREVA "Digite a sua idade: "
+LEIA I
+SE 7>=I>=5 ENTAO
+	ESCREVA "Você está na categoria infantil A"
+	SE 10>=I>=8 ENTAO
+		ESCREVA "Você está na categoria infantil B"
+		SE  13>=I>=11 ENTAO
+			ESCREVA "Você está na categoria juvenil A"
+			SE 17>=I>=14 ENTAO
+			ESCREVA "Você está na categoria juvenil B"
+				SE I>18 ENTAO
+				ESCREVA "Você está na categoria adulto"
+FIM_SE
+FIM
 ```
 
 #### Teste de mesa (0.5 ponto)
-
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| I | 7>=I>=5 | 10>=I>=8 | 13>=I>=11 | 17>=I>=14 | I>18 | Saída |
+|-- |   --    |    --    |    --     |    --     |  --  |   --  |
+| 6 | T |   |   |   |   |  "Você está na categoria infantil A"  |
+|10 | F | T |   |   |   | "Você está na categoria infantil B"   |
+|12 | F | F | T |   |   |"Você está na categoria juvenil A" |
+| 9 | F | T |   |   |   | "Você está na categoria infantil B" |
+|17 | F | F | F | T |   | "Você está na categoria juvenil B" |
+|18 | F | F | F | F | T | "Você está na categoria adulto" |
