@@ -215,15 +215,17 @@ K --LOOP--> F
 
 ```
 Algoritmo soma_sequencia
-DECLARE cont, soma, valor: INTEIROS
-INCIO
-cont <- 1
+DECLARE n, i, soma, num: INTEIROS
+INICIO
+ESCREVA "Digite a quantidade de termos: "
+LEIA n
+i <- 1
 soma <- 0
-ENQUANTO cont <= 5 FAÇA
-	ESCREVA "Digite o , cont,º valor"
-	LEIA valor
-	soma <- soma + valor
-	cont <- cont + 1
+ENQUANTO i <= n FAÇA
+	ESCREVA "Digite o número, i: "
+	LEIA num
+	soma <- soma + num
+	i <- i + 1
 FIM_ENQUANTO
 ESCREVA "A soma dos valores é, soma"
 FIM
