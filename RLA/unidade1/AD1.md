@@ -70,10 +70,18 @@ I --> J{{"b =", b}}
 
 #### Pseudocódigo (1 ponto)
 
-```
-Algoritmo TrocaValores
+```Algoritmo TrocaValores
+DECLARE a, b, aux: INTEIROS
 INICIO
-...
+ESCREVA "Digite o valor de a: "
+LEIA a
+ESCREVA "Digite o valor de b: "
+LEIA b
+aux <- a
+a <- b
+b <- aux
+ESCREVA "a= ,a"
+ESCREVA "b=, b"
 FIM
 ```
 
@@ -141,8 +149,20 @@ J --LOOP--> E
 
 ```
 Algoritmo ContaAprovacoes
+DECLARE n, cont, i: INTEIROS
 INICIO
-...
+ESCREVA "Digite o número de alunos: "
+LEIA n
+cont <- 0
+i <- 1
+PARA i=1 ATE n FAÇA
+	ESCREVA "Digite nota, i"
+	LEIA n
+	SE n >= 50 E n <= 100 ENTAO
+		cont = cont + 1
+	FIM_SE
+FIM_PARA
+ESCREVA "Número de alunos aprovados: ,cont
 FIM
 ```
 
@@ -204,8 +224,22 @@ K --LOOP--> G
 
 ```
 Algoritmo SomaNumeros
+DECLARE n, soma, i, num: INTEIROS
 INICIO
-...
+ESCREVA "Digite a quantidade de números (n >= 0):"
+LEIA n
+SE n >= 0
+	soma <- 0
+	i <- 1
+	ENQUANTO i <= n FAÇA
+		ESCREVA "Digite um número: "
+		LEIA num
+		soma <- soma + num
+		i <- i + 1
+	ESCREVA "A soma dos números é, soma"
+SENAO
+	ESCREVA "O valor deve ser maior que zero!"
+FIM_SE
 FIM
 ```
 
@@ -258,8 +292,19 @@ I --LOOP--> E
 
 ```
 Algoritmo SomaSerie
+DECLARE n, S, i, numerador, denominador: INTEIROS
+DECLARE termo: REAL
 INICIO
-...
+ESCREVA "Digite o número de termos da série S: "
+LEIA n
+S <- 0
+PARA i=0 ATE n FAÇA
+	numerador <- 2*i + 1
+	denominador <- 2*i + 2
+	termo <- numerador/denominador
+	S <- S + 1 
+FIM _PARA
+ESCREVA "Soma da série S é, S"
 FIM
 ```
 
@@ -306,8 +351,19 @@ H --> I
 
 ```
 Algoritmo CalcFatorial
+DECLARE n, i, fator: INTEIROS
 INICIO
-...
+ESCREVA "Digite um número inteiro não-negativo: "
+LEIA n
+SE n >= 0
+	fator <- 1
+	PARA i=1 ATE n FAÇA
+		fator <- fator * i
+	FIM_PARA
+	ESCREVA "O fatorial de, n, é:, fator"
+SENAO 
+	ESCREVA "O valor deve ser maior ou igual a zero!"
+FIM_SE
 FIM
 ```
 
@@ -354,8 +410,18 @@ I --LOOP--> E
 
 ```
 Algoritmo GeraFibonacci
+DECLARE a, b, i, n, termo_atual: INTEIROS
 INICIO
-...
+ESCREVA "Número de termos da série Fibonacci: "
+LEIA n
+a <- 0
+b <- 1
+PARA i=1 ATE n FAÇA
+	ESCREVA a
+	termo_atual <- a + b
+	a <- b
+	b <- termo_atual
+FIM_PARA 
 FIM
 ```
 #### Teste de mesa
@@ -405,8 +471,21 @@ E --> W
 
 ```
 Algoritmo InverteInteiro
+DECLARE num, num_inv, dígito, numero: INTEIROS
 INICIO
-...
+ESCREVA "Digite um número inteiro: "
+LEIA num
+SE num > 0
+	num_inv <- 0
+	ENQUANTO num > 0 FAÇA
+		digito <- numero % 10
+		num_inv <- num_inv*10+digito
+		numero <- numero / 10
+	FIM_ENQUANTO
+	ESCREVA "Número invertido, num_inv"
+SENAO 
+	ESCREVA "O número deve ser positivo"
+FIM_SE
 FIM
 ```
 
