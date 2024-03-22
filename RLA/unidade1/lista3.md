@@ -1,5 +1,5 @@
 # UNIFOR
-**Nome**: Nome do estudante <br>
+**Nome**: Maria Clara Paterno Maia <br>
 **Disciplina**: Raciocínio lógico algorítm
 
 ## Exercício exemplo 1
@@ -101,22 +101,48 @@ Atualize o algoritmo para determinar se um número inteiro e positivo é par ou 
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{Digite um número: }}
+B --> C[/n/]
+C --> D{n >= 0}
+D --FALSE--> Z{{o num deve ser positivo.}} --LOOP--> B
+D --TRUE--> E[r = n%2]
+E --> F{r = 0}
+F --TRUE--> M{{o número é par}}
+F --FALSE--> N{{o número é ímpar}}
+M --> O([FIM])
+N -->O
 ```
 
 #### Pseudocódigo (1.0 ponto)
 
 ```
-Algoritmo ClassificaCategoria
-FIM_ALGORITMO
+ALGORTIMO verifica_par_impar
+DECLARE n, r: INTEIRO
+INICIO
+ESCREVA "Digite um número: "
+LEIA n
+ENQUANTO n<0 FAÇA
+	ESCREVA "O número deve ser positivo"
+FIM_ENQUANTO	
+SE n >= 0 ENTAO                  
+r <- n % 2                 
+	SE r == 0 ENTAO               
+	ESCREVA "O número é par"
+	SENAO
+	ESCREVA "O número é impar"
+FIM_SE
+FIM		
 ```
 
 #### Teste de mesa (0.5 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+|  n  |  r  | r == 0 | saída |
+| --   |  --  |  --  |  --  |
+|  -1   |     |     |  "O número deve ser positivo"  |
+|  2   |  0   |   T  |   "O número é par"  |
+|  3   |  1   |   F  |  "O número é impar"   |
+
+
 
 ### Exercício 02 (2.5 pontos)
 Faça um algoritmo que exiba na tela uma contagem de 0 até 30, exibindo apenas os múltiplos de 3.
@@ -125,22 +151,43 @@ Faça um algoritmo que exiba na tela uma contagem de 0 até 30, exibindo apenas 
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B[i = 0]
+B --> C[/i/]
+C --> D[[i<--0 ATE 30 PASSO 3]]
+D --> E{{i}}
+E --> F{i>30}
+F --FALSE/LOOP--> D
+F --TRUE--> H([FIM])
 ```
 
 #### Pseudocódigo (1.0 ponto)
 
 ```
-Algoritmo ClassificaCategoria
-FIM_ALGORITMO
+Algoritmo Contagem_3
+DECLARE i: INTEIRO
+INICIO
+PARA i <-- 0 ATE 30 PASSO 3 FAÇA
+	ESCREVA i
+FIM_PARA
+FIM
 ```
 
 #### Teste de mesa (0.5 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+|  it  |  i   | saída | i>30 |
+| --   |  --  |  --  |  --  |
+|  1   |  0   |   0  |   F  |
+|  2   |  3   |   3  |   F  |
+|  3   |  6   |   6  |   F  |
+|  4   |  9   |   9  |   F  |
+|  5   |  12  |  12  |   F  |
+|  6   |  15  |  15  |   F  |
+|  7   |  18  |  18  |   F  |
+|  8   |  21  |  21  |   F  |
+|  9   |  24  |  24  |   F  |
+|  10  |  27  |  27  |   F  |
+|  11  |  30  |  30  |   V  |
+
 
 ### Exercício 03 (2.5 pontos)
 Dada uma sequência de números inteiros, calcular a sua soma. 
@@ -149,23 +196,46 @@ Por exemplo, para a sequência {12, 17, 4, -6, 8, 0}, o seu programa deve escrev
 #### Fluxograma (1.0 ponto)
 
 ```mermaid
-flowchart TD
-A([INICIO]) --> B([FIM])
+flowchart TB
+F([INICIO]) --> G[/cont = 1/]
+G --> H[/soma = 0/]
+H --> I{{Digite o, cont,º valor}}
+I --> J[/valor/]
+J --> K[soma = soma + valor]
+K --> L[cont = cont + 1]
+L --> M{cont <= 5}
+M --TRUE--> I
+M --FALSE--> N{{A soma dos valores é, soma}}
+N --> O([FIM])
 ```
 
 #### Pseudocódigo (1.0 ponto)
 
 ```
-Algoritmo ClassificaCategoria
-FIM_ALGORITMO
+Algoritmo soma_sequencia
+DECLARE cont, soma, valor: INTEIROS
+INCIO
+cont <- 1
+soma <- 0
+ENQUANTO cont <= 5 FAÇA
+	ESCREVA "Digite o , cont,º valor"
+	LEIA valor
+	soma <- soma + valor
+	cont <- cont + 1
+FIM_ENQUANTO
+ESCREVA "A soma dos valores é, soma"
+FIM
 ```
 
 #### Teste de mesa (0.5 ponto)
+| cont |  soma   | valor | soma + valor  |  
+|  --  |    --   |   --  |   --          |
+|  1   |  0      |  4    |   4           |
+|  2   |    4    |   5   | 9             |  
+|  3   |     9   |   10  | 19            |  
+|  4   |   19    |   3   | 22            |  
+|  5   |   22    |  6    |  28           |  
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
 
 ### Exercício 04 (2.5 pontos)
 Escreva um programa que leia a nota de diversos alunos, até que seja digitada uma nota negativa. 
@@ -176,7 +246,16 @@ Ex. Foram lidas 14 notas. A média aritmética é 6.75!
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B[/soma = 0/]
+B --> C[/cont = 0/]
+C --> D{{Digite uma nota: }}
+D --> Z[/nota/]
+Z --> E{nota > 0}
+E --TRUE--> F[soma = soma + nota]
+F --> G[cont = cont +1]
+G --LOOP--> D
+E --FALSE--> H[média = soma/cont ] 
+H --> I{{Foram lidas, cont, notas. A média é, média.}}
 ```
 
 #### Pseudocódigo (1.0 ponto)
@@ -187,8 +266,15 @@ FIM_ALGORITMO
 ```
 
 #### Teste de mesa (0.5 ponto)
+| cont | soma | nota | soma + nota | cont +1 | média|
+|  --  | --   |  --  |   --        |   --    | --   |
+|  0   |  0   |   4  |       4     |    1    |      |
+|  1   |  4   |   5  |       9     |    2    |      |
+|  2   |  9   |  10  |      19     |    3    |      |
+|  3   |  19  |   7  |      26     |    4    |      |
+|  4   |  26  |   6  |      32     |    5    |      |
+|  5   |  32  |   8  |      40     |    6    |      |
+|  6   |  40  |   9  |      49     |    7    |      |
+|  7   |  49  |  -3  |             |         |  7   |
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+
