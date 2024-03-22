@@ -197,16 +197,18 @@ Por exemplo, para a sequência {12, 17, 4, -6, 8, 0}, o seu programa deve escrev
 
 ```mermaid
 flowchart TB
-F([INICIO]) --> G[/cont = 1/]
-G --> H[/soma = 0/]
-H --> I{{Digite o, cont,º valor}}
-I --> J[/valor/]
-J --> K[soma = soma + valor]
-K --> L[cont = cont + 1]
-L --> M{cont <= 5}
-M --TRUE--> I
-M --FALSE--> N{{A soma dos valores é, soma}}
-N --> O([FIM])
+A([INICIO]) --> B{{Digite a quantidade de termos: }}
+B --> C[/n/]
+C --> D[/i = 1/]
+D --> E{{soma = 0}}
+E --> F{i <= n}
+F --FALSE--> G{{A soma dos valores é, soma}}
+G --> L([FIM])
+F --TRUE--> H{{Digite o número, i:}}
+H --> I[/num/]
+I --> J[soma = soma + num]
+J --> K[i = i + 1]
+K --LOOP--> F 
 ```
 
 #### Pseudocódigo (1.0 ponto)
