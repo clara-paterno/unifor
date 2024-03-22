@@ -237,6 +237,7 @@ SE n >= 0
 		soma <- soma + num
 		i <- i + 1
 	ESCREVA "A soma dos números é, soma"
+	FIM_ENQUANTO
 SENAO
 	ESCREVA "O valor deve ser maior que zero!"
 FIM_SE
@@ -461,7 +462,7 @@ H --FALSE--> Z{{"Número invertido:", numero_inv}}
 Z --> W([FIM])
 H --TRUE--> I[digito = num % 10]
 I --> J[num_inv = num_inv * 10 + digito]
-J --> K[numero = numero // 10]
+J --> K[num = num // 10]
 K --LOOP--> H
 D --FALSE--> E{{O número deve ser positivo!}}
 E --> W
@@ -471,16 +472,16 @@ E --> W
 
 ```
 Algoritmo InverteInteiro
-DECLARE num, num_inv, dígito, numero: INTEIROS
+DECLARE num, num_inv, dígito: INTEIROS
 INICIO
 ESCREVA "Digite um número inteiro: "
 LEIA num
 SE num > 0
 	num_inv <- 0
 	ENQUANTO num > 0 FAÇA
-		digito <- numero % 10
-		num_inv <- num_inv*10+digito
-		numero <- numero / 10
+		digito <- num % 10
+		num_inv <- num_inv*10 + digito
+		num <- num // 10
 	FIM_ENQUANTO
 	ESCREVA "Número invertido, num_inv"
 SENAO 
