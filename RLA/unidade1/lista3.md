@@ -257,9 +257,10 @@ D --> E[/nota/]
 E --> F[soma = soma + nota]
 F --> G[cont = cont +1]
 G --> H{nota < 0}
-H --FALSE/LOOP--> H[média = soma/cont ] 
-H --TRUE--> I{{Foram lidas, cont, notas. A média é, média.}}
-I --> J([FIM])
+H --FALSE/LOOP--> D 
+H -- TRUE--> I[média = soma/cont ] 
+I --TRUE--> J{{Foram lidas, cont, notas. A média é, média.}}
+J --> K([FIM])
 ```
 
 #### Pseudocódigo (1.0 ponto)
