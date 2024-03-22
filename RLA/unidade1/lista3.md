@@ -1,6 +1,6 @@
 # UNIFOR
 **Nome**: Maria Clara Paterno Maia <br>
-**Disciplina**: Raciocínio lógico algorítm
+**Disciplina**: Raciocínio lógico algorítmico
 
 ## Exercício exemplo 1
 Implemente e teste um programa que imprima os n primeiros números.
@@ -261,8 +261,20 @@ H --> I{{Foram lidas, cont, notas. A média é, média.}}
 #### Pseudocódigo (1.0 ponto)
 
 ```
-Algoritmo ClassificaCategoria
-FIM_ALGORITMO
+Algoritmo MédiaNotas
+DECLARE soma, cont, nota, média: INTEIROS
+INICIO
+soma <- 0
+cont <- 0
+ESCREVA "Digite uma nota: "
+LEIA nota
+ENQUANTO nota > 0 FAÇA
+	soma <- soma + nota
+	cont <- cont + 1
+FIM_ENQUANTO
+média <- soma/cont
+ESCREVA "Foram lidas, cont, notas. A média é, média."
+FIM
 ```
 
 #### Teste de mesa (0.5 ponto)
