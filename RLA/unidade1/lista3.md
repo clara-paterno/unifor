@@ -273,12 +273,12 @@ soma <- 0
 cont <- 0
 ESCREVA "Digite uma nota: "
 LEIA nota
-ENQUANTO nota > 0 FAÇA
-	soma <- soma + nota
-	cont <- cont + 1
-FIM_ENQUANTO
-média <- soma/cont
-ESCREVA "Foram lidas, cont, notas. A média é, média."
+soma <- soma + nota
+cont <- cont + 1
+SE nota < 0
+	média <- soma/cont
+	ESCREVA "Foram lidas, cont, notas. A média é, média."
+FIM_SE
 FIM
 ```
 
