@@ -1,0 +1,200 @@
+ Questão 1 (1 ponto) **
+
+Implemente em Python, um algoritmo para determinar se um número inteiro e positivo é par ou impar.
+
+#### Pseudocódigo
+```java
+ALGORTIMO verifica_par_impar
+DECLARE numero, resto: INTEIRO
+
+INICIO
+
+    ESCREVA "Digite um número: "
+    LEIA numero    
+    SE numero >= 0 ENTAO
+        resto <- numero % 2
+        SE resto == 0 ENTAO
+            ESCREVA "O número é par!"
+        SENAO
+          ESCREVA "O número é impar!"
+        FIM_SE
+    SENAO             
+        ESCREVA "O número deve ser postivo!"
+    FIM_SE
+    
+FIM
+```
+
+
+def verifica_par_ímpar ():
+
+    # Entrada de dados do usuário
+    num = float(input("Digite um número: "))
+
+    # Verificação do número
+    if num >= 0:
+        # Caso o número seja maior ou igual a zero
+        # Cálculo do resto
+        resto = num%2
+        # Verificação do resto
+        if resto == 0:
+            # Caso o resto seja igual a zero
+            print("O número é par!")
+
+        else:
+            # Caso o resto seja diferente de zero
+            print("O número é ímpar!")
+
+    else:
+        # Caso o número seja menor que zero
+        print("O número deve ser positivo!")
+
+verifica_par_ímpar ()
+
+## Questão 2 (1 ponto)
+
+Implemente em Python, um algoritmo para calcular o novo salário de um funcionário. Sabe-se que os funcionários que recebem atualmente salário de até R$ 500 terão aumento de 20%; os demais terão aumento de 10%.
+
+```java
+ALGORTIMO ReajusteSalario
+DECLARE sal_atual, sal_reaj: REAL
+
+INICIO
+
+    ESCREVA "Digite seu salário atual:"
+    LEIA sal_atual
+    SE sal_atual <= 500 ENTAO
+        sal_reaj = sal_atual * 1.2
+    SENAO
+        sal_reaj = sal_atual * 1.1
+    FIM_SE
+    ESCREVA "O novo salário é R$", sal_reaj
+
+FIM
+```
+
+def ReajusteSalario ():
+
+    # Entrada de dados do usuário
+    sal_atual = float(input("Digite o seu salário: "))
+
+    # Verificação do salário
+    if sal_atual <= 500:
+        # Caso o salário seja menor ou igual a 500
+        sal_reaj = sal_atual * 1.2
+
+    else:
+        # Caso o salário seja maior que 500
+        sal_reaj = sal_atual * 1.1
+
+    # Imprime o novo salário
+    print(f"O novo salário é R$ {sal_reaj}")
+
+ReajusteSalario ()
+
+## Questão 3 (1 ponto)
+
+Implemente em Python, um algoritmo para calcular a média aritmética entre duas notas de um aluno e mostrar sua situação, que pode ser aprovado ou reprovado.
+
+### Pseudocódigo (1 ponto)
+
+```java
+ALGORTIMO SituacaoAluno
+DECLARE nota1, nota2, media: REAL
+
+INICIO
+
+    ESCREVA "Digite a nota 1:"
+    LEIA nota1
+    ESCREVA "Digite a nota 2:"
+    LEIA nota2
+    SE nota1 >= 0 E nota2 >= 0 ENTAO
+        media =  (nota1 + nota2)/2
+        SE media >= 7 ENTAO
+            ESCREVA "O aluno está aprovado!"
+        SENAO
+            "O aluno está reprovado!"
+        FIM_SE
+    SENAO
+        ESCREVA "A nota deve ser maior que zero!"
+    FIM_SE
+
+FIM
+```
+
+def SituacaoAluno ():
+
+    # Entrada de dados do usuário
+    nota1 = float(input("Digite a nota 1: "))
+    nota2 = float(input("Digite a nota 2: "))
+
+    # Verificação das notas
+    if nota1 >= 0 and nota2 >=0:
+        # Cálculo da média
+        media = (nota1 + nota2)/2
+        if media >= 7:
+            #Caso a média seja maior ou igual a 7
+            print("O aluno está aprovado!")
+        else:
+            # Caso a média seja menor que 7
+            print("O aluno está reprovado!")
+
+    else:
+        #Caso uma das notas seja menor que 0
+        print("A nota deve ser maior que zero!")
+
+SituacaoAluno ()
+
+## Questão 4 (1 ponto)
+
+Implemente em Python, um algoritmo que, a partir da idade do candidato(a), determinar se pode ou não tirar a CNH. Caso não atender a restrição de idade, calcular quantos anos faltam para o candidato estar apto.
+
+### Pseudocódigo (1 ponto)
+
+```java
+ALGORTIMO AptoCNH
+DECLARE idade, anos_apto: INTEIRO
+
+INICIO
+
+    ESCREVA ""Digite a sua idade:"
+    LEIA idade
+
+    SE idade < 0 ENTAO
+        ESCREVA "A idade deve ser maior que zero!"
+    SENAO
+        SE idade >= 18 ENTAO
+            ESCREVA "O candidato está apto a tirar a CNH!"
+        SENAO
+            anos_apto <- 18 - idade
+            ESCREVA "Faltam", anos_apto, "ano(s) para o candidato estar apto!"
+        FIM_SE
+    FIM_SE
+
+FIM
+```
+
+def AptoCNH ():
+
+    # Entrada de dados do usuário
+    idade = int(input("Digite a sua idade: "))
+
+    # Verificação da idade
+    if idade < 0:
+        # Caso a idade seja menor que zero
+        print("A idade deve ser maior que zero!")
+
+    # Caso a idade seja maior que zero
+    else:
+        if idade >= 18:
+            # Caso a idade seja maior ou igual a 18 anos
+            print("O candidato está apto a tirar a CNH!")
+
+        else:
+            # Caso a idade seja menor que 18 anos
+            # Cálculo dos anos faltantes para os 18 anos
+            anos_apto = 18 - idade
+            # Imprimir anos faltantes para o candidato estar apto
+            print(f"Faltam {anos_apto} ano(s) para o candidato estar apto!")
+
+AptoCNH ()
