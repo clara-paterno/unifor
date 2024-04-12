@@ -1,8 +1,8 @@
- Questão 1 (1 ponto) **
+#Questão 1 (1 ponto) 
 
 Implemente em Python, um algoritmo para determinar se um número inteiro e positivo é par ou impar.
 
-#### Pseudocódigo
+## Pseudocódigo
 ```java
 ALGORTIMO verifica_par_impar
 DECLARE numero, resto: INTEIRO
